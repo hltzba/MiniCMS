@@ -1,0 +1,6 @@
+<ifmodule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^news$ /index.php?module=news [L]
+    RewriteRule ^userreg$ /index.php?module=userreg [L]
+    RewriteRule ^index$ /index.php?module=index [L]
+</ifmodule>

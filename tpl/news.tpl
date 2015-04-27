@@ -1,6 +1,3 @@
-<?php 
-    include 'includefiles/top.php';
-?>
  <br/>
  <br/>
  <h1>新闻首页</h1>
@@ -13,6 +10,3 @@
  ?>
   <br/>
  <br/>
-   <?php 
-    include 'includefiles/bottom.php';
-  ?>

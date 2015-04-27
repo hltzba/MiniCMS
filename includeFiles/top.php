@@ -10,5 +10,10 @@ include 'includeFiles/config.php';
     </head>
     <body>
         <div>            
-            <a href="/">首页</a> | <a href="/news.php">文章</a> | <a href="/userreg.php">注册</a>
+            <a href="/">首页</a> | <a href="/news">文章</a>
+            | <a href="/userreg">注册</a>
         </div>
+        <?php 
+        //加载模板
+        func_LoadTpl();
+        ?>

@@ -1,6 +1,3 @@
-<?php 
-    include 'includefiles/top.php';
-?>
 <style>
     *{margin: 0 auto;text-align: center;}
     .regtable{margin: 30px auto;}
@@ -23,6 +20,3 @@
     </form>
   <br/>
  <br/>
-   <?php 
-    include 'includefiles/bottom.php';
-  ?>
