@@ -16,6 +16,12 @@ switch ($get_PagePath)
   case '/userreg.php':
     {
         $CurrentTitle='用户注册'.$config_DefaultTitle;
+        if(isset($_POST["btnRegUser"]))//点击了注册按钮
+        {
+            $get_username=$_POST["username"];
+            $get_password=$_POST["password"];
+            echo '用户点击了注册按钮'.$get_username.'-'.$get_password;
+        }
     }break;
 default :
 {

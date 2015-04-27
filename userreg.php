@@ -7,6 +7,7 @@
     input{text-align: left;}
     .text{width: 150px;height: 22px;border: 0px; border-bottom:solid 1px gray ;}
 </style>
+<form method="post">
  <table class="regtable">
      <tr><th>用户注册</th></tr>
      <tr>
@@ -19,6 +20,7 @@
           <td><input type="submit" name="btnRegUser" value="注册"/></td>
      </tr>
  </table>
+    </form>
   <br/>
  <br/>
    <?php 
