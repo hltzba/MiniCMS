@@ -8,19 +8,20 @@ include 'includeFiles/config.php';
          echo $CurrentTitle;
          ?></title>
          <style>
-             *{margin: 0 auto;text-align: center;font-size: 14px;}
+             *{margin: 0 auto;text-align: center;font-size: 14px;font-family: "微软雅黑";}
              body{background: url(/image/bg.png)}
+             input{text-align: left;color:gray;}            
              .container{background-color: #474747;height: 130px;margin: 0 auto;
              color:#fff;}
-             .container a{color:#fff;text-decoration: none;}
+             .container a{color:#fff;text-decoration: none;font-size: 18px;}
              .container a:hover{text-decoration: underline;}
              .container .top{width: 1000px;}
              .container .logo{float: left;}
              .container .menu{width: 400px;float: left;margin-top:30px;
-                  margin-left: 15px;text-align: left;}
+                  margin-left: 15px;text-align: left;font-size: 18px;}
              .container .userinfo{float: right;text-align: right;}
              .container .search{border:solid 1px gray;width:150px;
-                    text-align: left;height: 21px;line-height: 21px;
+                   height: 21px;line-height: 21px;
                     background: url(/image/topsearch.gif) no-repeat #fff right;}
           </style>
     </head>

@@ -27,15 +27,67 @@
           $this->UserInfo[$name]=$value;
         }
         
+        //验证参数集合的个数是否符合要求
+        private function ValidArgs($args,$num)
+        {
+            if($args && is_array($args) && count($args)==$num)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         function __call($name, $arguments) {
             switch ($name)
             {
                 case "add":
-                {}break;
+                {
+                    if(ValidArgs($arguments,4))
+                    {
+                        $this->AddUser($arguments[0], $arguments[1], $arguments[2], $arguments[3]);
+                    }
+                }break;
+                case "login":
+                {
+                    
+                }break;
+                case "logout":
+                {
+                    
+                }break;
             }
         }
         
-       public static function GetCurrentUser()
+        //往数据库添加用户
+        private function  AddUser($username,$usermail,$userpwd1,$userpwd2)
+        {
+            if($userpwd1!=$userpwd2)
+            {
+                $this->ErrorCode="0001";
+                return FALSE;
+            }
+            if($userpwd1==""||$username==""||$usermail=="")
+            {
+                $this->ErrorCode="0002";
+                return FALSE;
+                
+            }
+            if(ArgsFormatValid($usermail)==FALSE)//格式验证
+            {
+                $this->ErrorCode="0003";
+                return FALSE;
+            }
+            if(UserKeyRepeatValid($username,$usermail)==FALSE)//用户键值验证是否重复
+            {
+                $this->ErrorCode="0004";
+                return FALSE;
+            }
+            DBHelper::AddUser($username,$usermail,$userpwd1);//写库
+        }
+
+        public static function GetCurrentUser()
         {
            echo 'Jimmy';
         }
