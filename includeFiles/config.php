@@ -1,5 +1,6 @@
 <?php
 include 'CommonFunction.php';//加载通用函数库
+include 'lib/DbHelper.php';//加载数据库帮助类
 $config_DefaultTitle='_Jimmy的博客';//站点默认Title
 $get_PagePath=$_SERVER["PHP_SELF"];//获取当前页面的地址
 $CurrentTitle=$config_DefaultTitle;
