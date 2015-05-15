@@ -8,7 +8,7 @@ function func_LoadTpl()
     $tplDir='tpl/';
 $tplNameArray=array(
     "news"=>"news.tpl",
-    "userreg"=>"userreg.tpl",
+    "userreg"=>"userreg.php",
     "index"=>"index.tpl",
 );
 
