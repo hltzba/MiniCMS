@@ -7,9 +7,9 @@ function func_LoadTpl()
 {
     $tplDir='tpl/';
 $tplNameArray=array(
-    "news"=>"news.tpl",
+    "news"=>"news.php",
     "userreg"=>"userreg.php",
-    "index"=>"index.tpl",
+    "index"=>"index.php",
 );
 
     $module=  filter_input(INPUT_GET, "module");   
@@ -20,7 +20,7 @@ $tplNameArray=array(
     }
     else        
     {
-         include $tplDir.'index.tpl';
+         include $tplDir.'index.php';
     }
 }
 ?>

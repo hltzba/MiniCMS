@@ -6,7 +6,7 @@ $MyDB=new DbHelper();
         public $_dbAddr='localhost';
         public $_dbName='';
         public $_dbUser='root';
-        public $_dbUser='';
+        public $_dbPwd='';
         function DbHelper()
         {
             
