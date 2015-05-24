@@ -25,5 +25,11 @@
         return $result;
         }
     }
+    
+    function the_news($params="")
+    {
+        $getNews=  new WebNews();
+        return $getNews->LoadNews("", "", 1, 10);
+    }
 ?>
 
