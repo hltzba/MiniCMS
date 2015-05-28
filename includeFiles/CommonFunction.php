@@ -10,6 +10,7 @@ $tplNameArray=array(
     "news"=>"news.php",
     "userreg"=>"userreg.php",
     "index"=>"index.php",
+    "login"=>"login.php",
 );
 
     $module=  filter_input(INPUT_GET, "module");   
