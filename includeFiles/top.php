@@ -33,13 +33,21 @@ include 'includeFiles/config.php';
                 </div>
                 
                 <div class="userinfo">
-                   <span>
                         <?php
                             include 'module/webuser.php';                 
-                            echo '欢迎回来 '.WebUser::GetCurrentUser();
+                        //    echo '欢迎回来 '.WebUser::GetCurrentUser();
+                            if(WebUser::UserIsLogged()):
                         ?>
-                 </span>
-            <span><a href="#">退出登录</a></span>
+                   <span>
+                       欢迎回来<a href="#"><?php   echo WebUser::GetCurrentUser();  ?></a>
+                 </span>                    
+            <span><a href="#">安全退出</a></span>
+            <?php else : ?>
+             <span>
+                     游客
+                 </span>                    
+            <span><a href="/login">立即登录</a></span>
+            <?php endif; ?>
                 </div>
                 
                 

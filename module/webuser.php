@@ -51,7 +51,10 @@
                 }break;
                 case "login":
                 {
-                    
+                    if(ValidArgs($arguments,2))
+                    {
+                        $this->UserLogin($arguments[0],$arguments[1]);
+                    }
                 }break;
                 case "logout":
                 {
@@ -60,6 +63,15 @@
             }
         }
         
+        //用户登录
+        private function UserLogin($username,$pwd)
+        {
+            if(trim($username)=="")
+            {return;}
+            setcookie("JJSWEET_LANGMIA",$username,time()+3600);
+        }
+
+
         //往数据库添加用户
         private function  AddUser($username,$usermail,$userpwd1,$userpwd2)
         {
@@ -86,10 +98,26 @@
             }
             DBHelper::AddUser($username,$usermail,$userpwd1);//写库
         }
+        
+        //用户登录判断
+        public static function UserIsLogged()
+        {
+            if(isset($_COOKIE["JJSWEET_LANGMIA"]))
+           {  return true;}
+           else
+           { return false;}
+        }
 
+        //获取当前登录的用户名
         public static function GetCurrentUser()
         {
-           echo 'Jimmy';
+           if(self::UserIsLogged())
+           {
+               return $_COOKIE["JJSWEET_LANGMIA"];
+           }
+          else
+              { return "游客";}
+        //   echo 'Jimmy';
         }
     }
 ?>
