@@ -34,14 +34,14 @@ include 'includeFiles/config.php';
                 
                 <div class="userinfo">
                         <?php
-                            include 'module/webuser.php';                 
+         require_once 'module/webuser.php';                 
                         //    echo '欢迎回来 '.WebUser::GetCurrentUser();
                             if(WebUser::UserIsLogged()):
                         ?>
                    <span>
                        欢迎回来<a href="#"><?php   echo WebUser::GetCurrentUser();  ?></a>
                  </span>                    
-            <span><a href="#">安全退出</a></span>
+            <span><a href="/logout">安全退出</a></span>
             <?php else : ?>
              <span>
                      游客

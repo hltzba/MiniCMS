@@ -6,7 +6,8 @@
 //        public $userAlias;
         private $UserInfo=array();
         
-                function __construct() {
+        function __construct() 
+        {
             //echo '用户已经初始化';
         }
         
@@ -44,31 +45,38 @@
             {
                 case "add":
                 {
-                    if(ValidArgs($arguments,4))
+                    if($this->ValidArgs($arguments,4))
                     {
                         $this->AddUser($arguments[0], $arguments[1], $arguments[2], $arguments[3]);
                     }
                 }break;
                 case "login":
                 {
-                    if(ValidArgs($arguments,2))
+                    if($this->ValidArgs($arguments,2))
                     {
                         $this->UserLogin($arguments[0],$arguments[1]);
                     }
                 }break;
                 case "logout":
                 {
-                    
+                    $this->UserLogout();
                 }break;
             }
         }
         
-        //用户登录
+        ///用户退出登陆
+        private function UserLogout()
+        {
+            setcookie("JJSWEET_LANGMIA","",time()-3600,"/");
+        }
+
+                //用户登录
         private function UserLogin($username,$pwd)
         {
+           // echo 'UserLogin='.$username;
             if(trim($username)=="")
             {return;}
-            setcookie("JJSWEET_LANGMIA",$username,time()+3600);
+            setcookie("JJSWEET_LANGMIA",$username,time()+3600,"/");
         }
 
 
@@ -102,7 +110,8 @@
         //用户登录判断
         public static function UserIsLogged()
         {
-            if(isset($_COOKIE["JJSWEET_LANGMIA"]))
+          //  echo "cookie=".$_COOKIE["JJSWEET_LANGMIA"];
+            if(isset($_COOKIE["JJSWEET_LANGMIA"])&&$_COOKIE["JJSWEET_LANGMIA"]!="")
            {  return true;}
            else
            { return false;}

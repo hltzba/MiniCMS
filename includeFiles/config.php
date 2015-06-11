@@ -5,6 +5,13 @@ require 'lib/DbHelper.php';//加载数据库帮助类
 $config_DefaultTitle='_Jimmy的博客';//站点默认Title
 $get_PagePath=$_SERVER["PHP_SELF"];//获取当前页面的地址
 $CurrentTitle=$config_DefaultTitle;
+
+//统一处理用户提交的表单
+if(isset($_POST)&&count($_POST)>0)
+{
+    func_DoAction($_POST);
+}
+
 switch ($get_PagePath)
 {
     case '/index.php':

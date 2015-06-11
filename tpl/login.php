@@ -17,7 +17,7 @@
          <td class="lefttd">用户名：</td><td class="righttd"><input type="text" name="username" class="text"/></td>
      </tr>     
       <tr>      
-         <td class="lefttd">密  码：</td><td class="righttd"><input type="password" name="password1" class="text"/></td>
+         <td class="lefttd">密  码：</td><td class="righttd"><input type="password" name="password" class="text"/></td>
      </tr>    
   
       <tr>
