@@ -14,10 +14,11 @@
  <table class="regtable">
      <tr><th></th><th class="righttd">用户登录</th></tr>
      <tr>
-         <td class="lefttd">用户名：</td><td class="righttd"><input type="text" name="username" class="text"/></td>
+         <td class="lefttd">用户名：</td><td class="righttd"><input type="text" name="username" id="txtUserName" class="text"/></td>
+         
      </tr>     
       <tr>      
-         <td class="lefttd">密  码：</td><td class="righttd"><input type="password" name="password" class="text"/></td>
+         <td class="lefttd">密  码：</td><td class="righttd"><input type="password" name="password" id="txtPassword" class="text"/></td>
      </tr>    
   
       <tr>
@@ -25,6 +26,28 @@
           <td class="righttd"><input type="submit" name="btnLogin" id="btnLogin" value="登录"/></td>
      </tr>
  </table>
+    <script>
+        $("#btnLogin").click(function(){
+            var result=false;
+            var resultContent="";
+            if($("#txtUserName").val().replace(/^\s*$/g,'')=="")
+            {
+                resultContent+="用户名不可为空！\r\n";
+                result= false;//返回false阻止Commit提交                
+            }
+            else
+            {result=true;}
+            if($("#txtPassword").val().replace(/^\s*$/g,'')=="")
+            {
+                 resultContent+="密码不可为空！\r\n";
+                result= false;//返回false阻止Commit提交        
+            }
+            else
+            {result=true;}
+            alert(resultContent);
+            return result;
+        })
+    </script>
     </form>
   <br/>
  <br/>

@@ -24,6 +24,7 @@ include 'includeFiles/config.php';
                    height: 21px;line-height: 21px;
                     background: url(/image/topsearch.gif) no-repeat #fff right;}
           </style>
+          <script src="/scripts/jq.js"/>
     </head>
     <body>
         <div class="container"><!--容器DIV-->
