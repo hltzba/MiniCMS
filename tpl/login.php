@@ -46,7 +46,7 @@
             {result=true;}
             alert(resultContent);
             return result;
-        })
+        });
     </script>
     </form>
   <br/>
