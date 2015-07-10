@@ -23,29 +23,34 @@
   
       <tr>
               <td></td>
-          <td class="righttd"><input type="submit" name="btnLogin" id="btnLogin" value="登录"/></td>
+          <td class="righttd"><input type="submit" name="btnLogin" id="btnLogin" value="登录"
+                                     style="display: none;"/></td>
      </tr>
  </table>
     <script>
+        $(document).ready(function(){
+            $("#btnLogin").css("display","inline-block");
         $("#btnLogin").click(function(){
-            var result=false;
+            var result=true;
             var resultContent="";
-            if($("#txtUserName").val().replace(/^\s*$/g,'')=="")
+            if(IsBlank("#txtUserName","red"))
             {
                 resultContent+="用户名不可为空！\r\n";
                 result= false;//返回false阻止Commit提交                
             }
-            else
-            {result=true;}
-            if($("#txtPassword").val().replace(/^\s*$/g,'')=="")
+           
+            if(IsBlank("#txtPassword","red"))
             {
                  resultContent+="密码不可为空！\r\n";
                 result= false;//返回false阻止Commit提交        
             }
-            else
-            {result=true;}
-            alert(resultContent);
+           
+            if(result==false)
+            {
+                alert(resultContent);
+            }
             return result;
+        });
         });
     </script>
     </form>
