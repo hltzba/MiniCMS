@@ -17,7 +17,7 @@ function IsEmail(obj,borderColor)
     {
         if(borderColor!="")
         {
-            $(obj).css("border","solid 1px "+border);            
+            $(obj).css("border","solid 1px "+borderColor);            
         }
         return false;
     }
