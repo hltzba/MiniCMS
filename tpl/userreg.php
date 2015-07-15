@@ -9,6 +9,7 @@
     border:solid #ddd 1px;background:#f5f5f5;border-radius:5px;}
     #btnRegUser{width:200px;height:40px;text-align:center;color:#fff;
     border:0px;background:#e96481;}
+    .readyshow{display: none;}
 </style>
 <form method="post">
  <table class="regtable">
@@ -32,7 +33,8 @@
      </tr>
       <tr>
               <td></td>
-          <td class="righttd"><input type="submit" name="btnRegUser" id="btnRegUser" value="注册"/></td>
+          <td class="righttd"><input type="submit" name="btnRegUser" 
+                                     id="btnRegUser" value="注册" class="readyshow"/></td>
      </tr>
  </table>
     </form>
